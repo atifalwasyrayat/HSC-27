@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>এইচএসসি সিলেবাস ট্র্যাকার</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #eff4f2;
+  --surface: #ffffff;
+  --fg: #14201d;
+  --muted: #5a6b66;
+  --line: #d3dfdb;
+  --accent: #0b7a6c;
+  --accent-fg: #ffffff;
+  --track: #dbe6e2;
+  --font: "Hind Siliguri", "Noto Sans Bengali", "Kalpurush", "Nirmala UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1715;
+    --surface: #16221f;
+    --fg: #e6f0ed;
+    --muted: #93a8a2;
+    --line: #26362f;
+    --accent: #3fd0b8;
+    --accent-fg: #06201b;
+    --track: #25352f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1715;
+  --surface: #16221f;
+  --fg: #e6f0ed;
+  --muted: #93a8a2;
+  --line: #26362f;
+  --accent: #3fd0b8;
+  --accent-fg: #06201b;
+  --track: #25352f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--bg);
+}
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+h1 { font-size: 1.6rem; line-height: 1.25; margin: 0; font-weight: 700; text-wrap: balance; }
+.lead { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+.summary {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: var(--bg);
+  padding-block: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.summary-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.big { font-size: 2.4rem; font-weight: 700; line-height: 1; color: var(--accent);
